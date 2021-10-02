@@ -3,4 +3,6 @@
   flex: 1;
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px 0;
+  width: 70px;
+  height: 80px;
 }

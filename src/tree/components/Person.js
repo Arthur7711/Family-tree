@@ -2,11 +2,13 @@ import React from "react";
 import styles from "./Person.module.css";
 import classNames from "classnames";
 
-const Person = ({ WIDTH, HEIGHT,COLOR }) => {
+let cx = classNames.bind(styles)
+
+const Person = ({ pers }) => {
+  let bgColor = pers.gender;
+
   return (
-    // <div className={styles.pers}>
-      <div className={styles.inner} style={{ width: WIDTH, height: HEIGHT }} />
-    // </div>
+    <div className={styles.inner} />
   );
 };
 
