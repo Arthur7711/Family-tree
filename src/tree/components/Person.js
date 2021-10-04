@@ -2,16 +2,16 @@ import React from "react";
 import styles from "./Person.module.css";
 import classNames from "classnames";
 
-const Person = ({ personsData }) => {
+const Person = ({ personsData, inputData }) => {
   // console.log(personsData);
   const unHidding = (data) => {
     data.forEach((child) => {
       console.log(child);
-      <div
-            title={child.name}
-            className={classNames(styles.inner, styles[child.gender])}
-            key={child.id}
-          />
+      // <div
+      //   title={child.name}
+      //   className={classNames(styles.inner, styles[child.gender])}
+      //   key={child.id}
+      // />;
       if (child.children === undefined) {
         return;
       }
@@ -24,8 +24,8 @@ const Person = ({ personsData }) => {
   return (
     <div className={styles.allPersons}>
       {unHidding(personsData)}
-      {personsData &&
-        personsData.map((person) => (
+      {inputData &&
+        inputData.map((person) => (
           <div
             title={person.name}
             className={classNames(styles.inner, styles[person.gender])}

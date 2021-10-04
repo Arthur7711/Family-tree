@@ -6,7 +6,7 @@ function App() {
     { id: "n2", name: "name2", gender: "female", parentId: null, spouse: [] },
     { id: "n3", name: "name3", gender: "male", parentId: "n1", spouse: [] },
     { id: "n4", name: "name4", gender: "male", parentId: "n1", spouse: [] },
-    { id: "n5", name: "name5", gender: "male", parentId: "n3", spouse: [] },
+    { id: "n5", name: "name5", gender: "female", parentId: "n3", spouse: [] },
     { id: "n6", name: "name6", gender: "male", parentId: "n4", spouse: [] },
     { id: "n7", name: "name7", gender: "female", parentId: "n5", spouse: [] },
     { id: "n8", name: "name8", gender: "male", parentId: "n6", spouse: [] },
