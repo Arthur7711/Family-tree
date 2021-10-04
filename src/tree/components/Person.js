@@ -3,7 +3,7 @@ import styles from "./Person.module.css";
 import classNames from "classnames";
 
 const Person = ({ personsData }) => {
-  console.log(personsData);
+  // console.log(personsData);
   return (
     <div className={styles.allPersons}>
       {personsData &&

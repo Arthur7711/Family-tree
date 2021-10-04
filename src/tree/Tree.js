@@ -2,7 +2,7 @@ import React from "react";
 import Person from "./components/Person";
 import styles from "./Tree.module.css";
 
-const Tree = () => {
+const Tree = ({input}) => {
   const dataTree = [
     {
       id: "p1",
@@ -37,13 +37,35 @@ const Tree = () => {
     {
       id: "p4",
       gender: "male",
-      parents: [],
+      parents: [
+        { id: "p1", type: "blood" },
+        { id: "p2", type: "blood" },
+      ],
       children: [],
       spouse: [],
       siblings: [],
       name: "someName4",
     },
   ];
+
+  let data;
+  function makeTree(nodes, parentId) {
+    return (data = nodes
+      .filter((node) => node.parentId === parentId)
+      .reduce(
+        (tree, node) => [
+          ...tree,
+          {
+            ...node,
+            children: makeTree(nodes, node.id),
+          },
+        ],
+        []
+      ));
+  }
+
+  makeTree(input, null);
+  console.log(data);
 
   return (
     <div className={styles.tree}>
