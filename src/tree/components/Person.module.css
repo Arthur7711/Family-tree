@@ -6,3 +6,9 @@
   width: 70px;
   height: 80px;
 }
+.male {
+  background-color: blue;
+}
+.female {
+  background-color: palevioletred;
+}

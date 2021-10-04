@@ -1,6 +1,6 @@
 import React from "react";
 import Person from "./components/Person";
-import styles from './Tree.module.css'
+import styles from "./Tree.module.css";
 
 const Tree = () => {
   const dataTree = [
@@ -39,8 +39,8 @@ const Tree = () => {
   ];
   return (
     <div className={styles.tree}>
-      {dataTree.map((person) => (
-        <Person pers={person.gender} />
+      {dataTree.map((person, i) => (
+        <Person pers={person} key={i} />
       ))}
     </div>
   );
