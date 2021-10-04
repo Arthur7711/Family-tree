@@ -10,6 +10,7 @@ const Tree = () => {
       parents: [],
       children: [{ id: "p3", type: "blood" }],
       spouse: [],
+      siblings: [],
       name: "someName1",
     },
     {
@@ -18,6 +19,7 @@ const Tree = () => {
       parents: [],
       children: [{ id: "p3", type: "blood" }],
       spouse: [],
+      siblings: [],
       name: "someName2",
     },
     {
@@ -29,6 +31,7 @@ const Tree = () => {
       ],
       children: [],
       spouse: [],
+      siblings: [],
       name: "someName3",
     },
     {
@@ -37,6 +40,7 @@ const Tree = () => {
       parents: [],
       children: [],
       spouse: [],
+      siblings: [],
       name: "someName4",
     },
   ];
