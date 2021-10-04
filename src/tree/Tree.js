@@ -47,9 +47,7 @@ const Tree = () => {
 
   return (
     <div className={styles.tree}>
-      <div>
-        <Person personsData={dataTree} />
-      </div>
+      <Person personsData={dataTree} />
     </div>
   );
 };
