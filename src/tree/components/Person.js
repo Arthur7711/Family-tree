@@ -2,12 +2,19 @@ import React from "react";
 import styles from "./Person.module.css";
 import classNames from "classnames";
 
-const Person = ({ pers }) => {
+const Person = ({ personsData }) => {
+  console.log(personsData);
   return (
-    <div
-      title={pers.name}
-      className={classNames(styles.inner, styles[pers.gender])}
-    />
+    <>
+      {personsData &&
+        personsData.map((person) => (
+          <div
+            title={person.name}
+            className={classNames(styles.inner, styles[person.gender])}
+            key={person.id  }
+          />
+        ))}
+    </>
   );
 };
 

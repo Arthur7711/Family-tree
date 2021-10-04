@@ -44,12 +44,11 @@ const Tree = () => {
       name: "someName4",
     },
   ];
+
   return (
     <div className={styles.tree}>
       <div>
-        {dataTree.map((person, i) => (
-          <Person pers={person} key={i} />
-        ))}
+        <Person personsData={dataTree} />
       </div>
     </div>
   );
