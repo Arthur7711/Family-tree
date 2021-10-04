@@ -8,25 +8,28 @@ const Tree = () => {
       id: "p1",
       gender: "male",
       parents: [],
-      children: [],
+      children: [{ id: "p3", type: "blood" }],
       spouse: [],
-      name: "someName",
+      name: "someName1",
     },
     {
       id: "p2",
       gender: "female",
       parents: [],
-      children: [],
+      children: [{ id: "p3", type: "blood" }],
       spouse: [],
-      name: "someName",
+      name: "someName2",
     },
     {
       id: "p3",
       gender: "female",
-      parents: [],
+      parents: [
+        { id: "p1", type: "blood" },
+        { id: "p2", type: "blood" },
+      ],
       children: [],
       spouse: [],
-      name: "someName",
+      name: "someName3",
     },
     {
       id: "p4",
@@ -34,14 +37,16 @@ const Tree = () => {
       parents: [],
       children: [],
       spouse: [],
-      name: "someName",
+      name: "someName4",
     },
   ];
   return (
     <div className={styles.tree}>
-      {dataTree.map((person, i) => (
-        <Person pers={person} key={i} />
-      ))}
+      <div>
+        {dataTree.map((person, i) => (
+          <Person pers={person} key={i} />
+        ))}
+      </div>
     </div>
   );
 };
