@@ -4,8 +4,26 @@ import classNames from "classnames";
 
 const Person = ({ personsData }) => {
   // console.log(personsData);
+  const unHidding = (data) => {
+    data.forEach((child) => {
+      console.log(child);
+      <div
+            title={child.name}
+            className={classNames(styles.inner, styles[child.gender])}
+            key={child.id}
+          />
+      if (child.children === undefined) {
+        return;
+      }
+      if (child.children) {
+        unHidding(child.children);
+      }
+    });
+  };
+  // unHidding(personsData);
   return (
     <div className={styles.allPersons}>
+      {unHidding(personsData)}
       {personsData &&
         personsData.map((person) => (
           <div
