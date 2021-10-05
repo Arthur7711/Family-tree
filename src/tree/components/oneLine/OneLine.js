@@ -12,7 +12,7 @@ const Oneline = ({ id, name, gender, spouse, children, childs }) => {
       </div>
       {hasChildren &&
         children.map((item) => (
-          <div style={{ border: "2px solid green", padding: "30px" }}>
+          <div style={{ padding: "30px" }}>
             <Oneline key={item.id} {...item} />
           </div>
         ))}
