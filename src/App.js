@@ -1,3 +1,4 @@
+import Lines from "./tree/components/linesTest/Lines";
 import Tree from "./tree/Tree";
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
   
   return (
     <div>
-      <Tree inputData={input} />
+      {/* <Tree inputData={input} /> */}
+      <Lines />
     </div>
   );
 }
