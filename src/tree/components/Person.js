@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./Person.module.css";
 import classNames from "classnames";
 
-const Person = ({ name, gender, children }) => {
+const Person = ({ personData}) => {
   // console.log(personsData);
   // const RecursiveComponent = ({ name, items }) => {
   // const hasChildren = items && items.length
-  const hasChildren = children && children.length;
+  // const hasChildren = children && children.length;
 
   //   return (
   //     <>
@@ -36,8 +36,8 @@ const Person = ({ name, gender, children }) => {
   // unHidding(personsData);
   return (
     <div className={styles.allPersons}>
-      {hasChildren &&
-        children.map((person) => (
+      {personData &&
+        personData.map((person) => (
           <div
             title={person.name}
             className={classNames(styles.inner, styles[person.gender])}

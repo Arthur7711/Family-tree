@@ -69,7 +69,7 @@ const Tree = ({ inputData }) => {
 
   return (
     <div className={styles.tree}>
-      <Person {...data} />
+      <Person personData={data} />
     </div>
   );
 };
