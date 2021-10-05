@@ -8,6 +8,7 @@ const Oneline = ({ id, name, gender, spouse, children }) => {
     <>
       <div className={classNames(styles.inner, styles[gender])} title={id}>
         {name}
+        {spouse}
       </div>
       {hasChildren &&
         children.map((item) => <Oneline key={item.id} {...item} />)}

@@ -1,18 +1,17 @@
 .inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px 0;
-    width: 70px;
-    height: 80px;
-    cursor: pointer;
-    margin: 10px;
-  }
-  .male {
-    background-color: blue;
-  }
-  .female {
-    background-color: palevioletred;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px 0;
+  width: 70px;
+  height: 80px;
+  cursor: pointer;
+  margin: 10px;
+}
+.male {
+  background-color: #a4ecff;
+}
+.female {
+  background-color: #fdaed8;
+}
