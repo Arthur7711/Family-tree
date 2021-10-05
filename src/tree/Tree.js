@@ -65,11 +65,11 @@ const Tree = ({ inputData }) => {
   }
 
   makeTree(inputData, null);
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className={styles.tree}>
-      <Person personData={data} />
+      <Person personsData={data} />
     </div>
   );
 };
