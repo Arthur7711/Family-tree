@@ -10,7 +10,7 @@ const Oneline = ({ id, name, gender, spouse, children, parentId, childs }) => {
       <div
         id={id}
         className={classNames(styles.inner, styles[gender])}
-        title={id}
+        title={`id_${id}, spouse_${spouse}, childrens_${childs}`}
       >
         {name}
         {spouse}
