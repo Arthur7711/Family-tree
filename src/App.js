@@ -21,8 +21,8 @@ function App() {
   
   return (
     <div>
-      {/* <Tree inputData={input} /> */}
-      <Lines />
+      <Tree inputData={input} />
+      {/* <Lines /> */}
     </div>
   );
 }
