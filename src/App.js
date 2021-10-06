@@ -1,4 +1,4 @@
-import Lines from "./tree/components/linesTest/Lines";
+// import Lines from "./tree/components/linesTest/Lines";
 import Tree from "./tree/Tree";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
     { id: "n12", name: "name12", gender: "male", parentId: "n2", spouse: "",childs:[] },
     { id: "n13", name: "name13", gender: "male", parentId: "n2", spouse: "",childs:[] },
     { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "",childs:[] },
+    { id: "n15", name: "name15", gender: "female", parentId: 'n1', spouse: "",childs:[] },
   ];
   
   return (

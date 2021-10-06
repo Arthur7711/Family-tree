@@ -9,6 +9,12 @@
   cursor: pointer;
   margin: 10px;
 }
+/* .forOneLine {
+  padding: "30px";
+} */
+.forOneLine:last-child {
+  display: none;
+}
 .male {
   background-color: #a4ecff;
 }
