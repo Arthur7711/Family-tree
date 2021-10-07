@@ -4,12 +4,10 @@ import Xarrow from "react-xarrows";
 import { useState } from "react";
 
 const Oneline = ({ id, name, gender, spouse, children, parentId, childs }) => {
-  const [x, setX] = useState(100);
   const [y, setY] = useState(100);
   const hasChildren = children && children.length;
 
   function getNewPosition() {
-    setX(x + 100);
     setY(y + 100);
   }
 
@@ -34,6 +32,7 @@ const Oneline = ({ id, name, gender, spouse, children, parentId, childs }) => {
       {hasChildren
         ? children.map((item, key) => (
             <div
+              key={item.id}
               className="test1"
               style={{
                 padding: "30px",
@@ -42,11 +41,7 @@ const Oneline = ({ id, name, gender, spouse, children, parentId, childs }) => {
                 left: 100 * key,
               }}
             >
-              <Oneline
-                key={item.id}
-                {...item}
-                getNewPosition={getNewPosition}
-              />
+              <Oneline {...item} getNewPosition={getNewPosition} />
               <Xarrow
                 start={item.parentId}
                 end={item.id}

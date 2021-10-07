@@ -13,11 +13,11 @@ function App() {
     { id: "n8", name: "name8", gender: "male", parentId: "n6", spouse: "",childs:["n9","n10"] },
     { id: "n9", name: "name9", gender: "male", parentId: "n8", spouse: "",childs:[] },
     { id: "n10", name: "name10", gender: "female", parentId: "n8", spouse: "n12",childs:[] },
-    { id: "n11", name: "name11", gender: "male", parentId: null, spouse: "",childs:[] },
+    { id: "n11", name: "name11", gender: "male", parentId: null, spouse: "n14",childs:[] },
     { id: "n12", name: "name12", gender: "male", parentId: "n2", spouse: "",childs:[] },
     { id: "n13", name: "name13", gender: "male", parentId: "n2", spouse: "",childs:[] },
-    { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "",childs:[] },
-    { id: "n15", name: "name15", gender: "female", parentId: 'n1', spouse: "",childs:[] },
+    { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "n11",childs:[] },
+    { id: "n15", name: "name15", gender: "female", parentId: 'n11', spouse: "",childs:[] },
   ];
   
   return (

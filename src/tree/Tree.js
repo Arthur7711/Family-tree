@@ -1,9 +1,8 @@
 import React from "react";
 import Person from "./components/Person";
 import styles from "./Tree.module.css";
-import Xarrow from "react-xarrows";
 
-const Tree = ({ inputData }) => {
+const Tree = ({ inputData, spouseLineColor, arrowHeadSize }) => {
   // const dataTree = [
   //   {
   //     id: "p1",
@@ -70,9 +69,6 @@ const Tree = ({ inputData }) => {
 
   return (
     <div className={styles.tree}>
-      {/* {data.forEach(el => {
-        el.
-      })} */}
       <Person personsData={data} />
     </div>
   );
