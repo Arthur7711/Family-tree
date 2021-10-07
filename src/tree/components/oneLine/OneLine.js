@@ -21,8 +21,16 @@ const Oneline = ({ id, name, gender, spouse, children, parentId, childs }) => {
         title={`id_${id}, spouse_${spouse}, childrens_${childs}`}
       >
         {name}
-        {spouse}
       </div>
+      {spouse && (
+        <Xarrow
+          color="blue"
+          headSize={2}
+          start={spouse} //can be react ref
+          end={id} //or an id
+        />
+      )}
+
       {hasChildren
         ? children.map((item, key) => (
             <div
@@ -39,9 +47,14 @@ const Oneline = ({ id, name, gender, spouse, children, parentId, childs }) => {
                 {...item}
                 getNewPosition={getNewPosition}
               />
+
+              {/* {spouse.length > 0 && ( */}
+              {/* )} */}
               <Xarrow
-                start={item.parentId} //can be react ref
-                end={item.id} //or an id
+                start={item.parentId}
+                end={item.id}
+                headSize={2}
+                color="#ccc"
               />
             </div>
           ))
