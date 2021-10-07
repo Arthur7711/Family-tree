@@ -3,8 +3,8 @@ import Tree from "./tree/Tree";
 
 function App() {
   const input = [
-    { id: "n1", name: "name1", gender: "male", parentId: null, spouse: "",childs:['n3','n4'] },
-    { id: "n2", name: "name2", gender: "female", parentId: null, spouse: "",childs:["n12","n13"] },
+    { id: "n1", name: "name1", gender: "male", parentId: null, spouse: "n2",childs:['n3','n4'] },
+    { id: "n2", name: "name2", gender: "female", parentId: null, spouse: "n1",childs:["n12","n13"] },
     { id: "n3", name: "name3", gender: "male", parentId: "n1", spouse: "",childs:['n5'] },
     { id: "n4", name: "name4", gender: "male", parentId: "n1", spouse: "",childs:['n6'] },
     { id: "n5", name: "name5", gender: "female", parentId: "n3", spouse: "",childs:['n7'] },

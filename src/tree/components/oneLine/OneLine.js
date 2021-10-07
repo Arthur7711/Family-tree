@@ -47,9 +47,6 @@ const Oneline = ({ id, name, gender, spouse, children, parentId, childs }) => {
                 {...item}
                 getNewPosition={getNewPosition}
               />
-
-              {/* {spouse.length > 0 && ( */}
-              {/* )} */}
               <Xarrow
                 start={item.parentId}
                 end={item.id}
