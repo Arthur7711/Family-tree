@@ -2,7 +2,7 @@ import React from "react";
 import Person from "./components/Person";
 import styles from "./Tree.module.css";
 
-const Tree = ({ inputData,WIDTH,HEIGHT,arrowHeadSize}) => {
+const Tree = ({ inputData, WIDTH, HEIGHT, arrowHeadSize, spouseLineColor }) => {
   // const dataTree = [
   //   {
   //     id: "p1",
@@ -69,7 +69,13 @@ const Tree = ({ inputData,WIDTH,HEIGHT,arrowHeadSize}) => {
 
   return (
     <div className={styles.tree}>
-      <Person WIDTH={WIDTH} HEIGHT={HEIGHT} arrowHeadSize={arrowHeadSize} personsData={data} />
+      <Person
+        spouseLineColor={spouseLineColor}
+        WIDTH={WIDTH}
+        HEIGHT={HEIGHT}
+        arrowHeadSize={arrowHeadSize}
+        personsData={data}
+      />
     </div>
   );
 };

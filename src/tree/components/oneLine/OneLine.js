@@ -14,6 +14,7 @@ const Oneline = ({
   WIDTH,
   HEIGHT,
   arrowHeadSize,
+  spouseLineColor,
 }) => {
   const [y, setY] = useState(100);
   const hasChildren = children && children.length;
@@ -34,8 +35,8 @@ const Oneline = ({
       </div>
       {spouse && (
         <Xarrow
-          color="blue"
-          headSize={arrowHeadSize?arrowHeadSize:2}
+          color={spouseLineColor ? spouseLineColor : "blue"}
+          headSize={arrowHeadSize ? arrowHeadSize : 2}
           start={spouse} //can be react ref
           end={id} //or an id
         />
@@ -57,13 +58,14 @@ const Oneline = ({
                 WIDTH={WIDTH}
                 HEIGHT={HEIGHT}
                 arrowHeadSize={arrowHeadSize}
-                {...item}
                 getNewPosition={getNewPosition}
+                spouseLineColor={spouseLineColor}
+                {...item}
               />
               <Xarrow
                 start={item.parentId}
                 end={item.id}
-                headSize={arrowHeadSize?arrowHeadSize:2}
+                headSize={arrowHeadSize ? arrowHeadSize : 2}
                 color="#ccc"
               />
             </div>
