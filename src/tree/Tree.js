@@ -1,6 +1,7 @@
 import React from "react";
 import Person from "./components/Person";
 import styles from "./Tree.module.css";
+import { PropTypes } from "prop-types";
 
 const Tree = ({
   inputData,
@@ -49,4 +50,15 @@ const Tree = ({
   );
 };
 
+Tree.propTypes = {
+  inputData: PropTypes.array,
+  WIDTH: PropTypes.string,
+  HEIGHT: PropTypes.string,
+  arrowHeadSize: PropTypes.number,
+  spouseLineColor: PropTypes.string,
+  childsLineColor: PropTypes.string,
+  textFontSize: PropTypes.string,
+  distanceByX: PropTypes.number,
+  distanceByY: PropTypes.number,
+};
 export default Tree;
