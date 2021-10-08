@@ -10,7 +10,9 @@ const Person = ({
   arrowHeadSize,
   spouseLineColor,
   childsLineColor,
-  textFontSize
+  textFontSize,
+  distanceByX,
+  distanceByY,
 }) => {
   // console.log(spouseLineColor)
   return (
@@ -27,6 +29,8 @@ const Person = ({
                   spouseLineColor={spouseLineColor}
                   childsLineColor={childsLineColor}
                   textFontSize={textFontSize}
+                  distanceByX={distanceByX}
+                  distanceByY={distanceByY}
                   {...el}
                 />
                 <Xarrow
@@ -47,6 +51,8 @@ const Person = ({
             spouseLineColor={spouseLineColor}
             childsLineColor={childsLineColor}
             textFontSize={textFontSize}
+            distanceByX={distanceByX}
+            distanceByY={distanceByY}
             {...el}
           />
         </div>

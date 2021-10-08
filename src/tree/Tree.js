@@ -10,6 +10,8 @@ const Tree = ({
   spouseLineColor,
   childsLineColor,
   textFontSize,
+  distanceByX,
+  distanceByY,
 }) => {
   // const dataTree = [
   //   {
@@ -85,6 +87,8 @@ const Tree = ({
         childsLineColor={childsLineColor}
         textFontSize={textFontSize}
         personsData={data}
+        distanceByX={distanceByX}
+        distanceByY={distanceByY}
       />
     </div>
   );

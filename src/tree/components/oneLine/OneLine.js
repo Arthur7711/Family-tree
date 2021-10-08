@@ -16,13 +16,16 @@ const Oneline = ({
   arrowHeadSize,
   spouseLineColor,
   childsLineColor,
-  textFontSize
+  textFontSize,
+  distanceByX,
+  distanceByY,
 }) => {
-  const [y, setY] = useState(100);
+  const [y, setY] = useState(distanceByY ? distanceByY : 100);
+  const [x, setX] = useState(distanceByX ? distanceByX : 100);
   const hasChildren = children && children.length;
 
   function getNewPosition() {
-    setY(y + 100);
+    distanceByX ? setY(y + distanceByX) : setY(y + 100);
   }
 
   return (
@@ -33,7 +36,9 @@ const Oneline = ({
         className={classNames(styles.inner, styles[gender])}
         title={`id_${id}, spouse_${spouse}, childrens_${childs}`}
       >
-        <span style={{fontSize:textFontSize}} className={styles.fonts}>{name}</span>
+        <span style={{ fontSize: textFontSize }} className={styles.fonts}>
+          {name}
+        </span>
       </div>
       {spouse && (
         <Xarrow
@@ -53,7 +58,7 @@ const Oneline = ({
                 padding: "30px",
                 position: "absolute",
                 top: y,
-                left: 100 * key,
+                left: x * key,
               }}
             >
               <Oneline
@@ -64,6 +69,8 @@ const Oneline = ({
                 spouseLineColor={spouseLineColor}
                 childsLineColor={childsLineColor}
                 textFontSize={textFontSize}
+                distanceByX={distanceByX}
+                distanceByY={distanceByY}
                 {...item}
               />
               <Xarrow
