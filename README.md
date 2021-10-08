@@ -14,11 +14,11 @@
 
 ### for giving size toarrow --> _arrowHeadSize={Number}_
 
-### for giving width to each person element--> WIDTH={string/'12px','2em','2rem'}\_
+### for giving width to each person element--> WIDTH={string/'12px','2em','2rem'}
 
-### for giving height to each person element--> HEIGHT={string/'12px','2em','2rem'}\_
+### for giving height to each person element--> HEIGHT={string/'12px','2em','2rem'}
 
-### data should be like --> inputData={[
+### data should be like --> inputData={[data]}
 
     { id: "n1", name: "name1", gender: "male", parentId: null, spouse: "n2",childs:['n3','n4'] },
     { id: "n2", name: "name2", gender: "female", parentId: null, spouse: "n1",childs:["n12","n13"] },
