@@ -22,7 +22,7 @@ function App() {
   
   return (
     <div>
-      <Tree WIDTH='40px' HEIGHT="50px" inputData={input} />
+      <Tree arrowHeadSize={3} WIDTH='40px' HEIGHT="50px" inputData={input} />
       {/* <Lines /> */}
     </div>
   );
