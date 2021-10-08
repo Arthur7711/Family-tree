@@ -3,7 +3,7 @@ import Oneline from "./oneLine/OneLine";
 import styles from "./Person.module.css";
 import Xarrow from "react-xarrows";
 
-const Person = ({ personsData }) => {
+const Person = ({ personsData,WIDTH,HEIGHT }) => {
   // console.log(spouseLineColor)
   return (
     <div className={styles.allPersons}>
@@ -12,7 +12,7 @@ const Person = ({ personsData }) => {
           {personsData.forEach((s) => {
             return el.spouse ? (
               <div key={el.id}>
-                <Oneline {...el} />
+                <Oneline WIDTH={WIDTH} HEIGHT={HEIGHT} {...el} />
                 <Xarrow
                   // color={spouseLineColor ? spouseLineColor : "red"}
                   // color="#ccc"
@@ -23,7 +23,7 @@ const Person = ({ personsData }) => {
               </div>
             ) : null;
           })}
-          <Oneline {...el} />
+          <Oneline WIDTH={WIDTH} HEIGHT={HEIGHT} {...el} />
         </div>
       ))}
     </div>
