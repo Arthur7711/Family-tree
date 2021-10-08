@@ -15,6 +15,8 @@ const Oneline = ({
   HEIGHT,
   arrowHeadSize,
   spouseLineColor,
+  childsLineColor,
+  textFontSize
 }) => {
   const [y, setY] = useState(100);
   const hasChildren = children && children.length;
@@ -31,7 +33,7 @@ const Oneline = ({
         className={classNames(styles.inner, styles[gender])}
         title={`id_${id}, spouse_${spouse}, childrens_${childs}`}
       >
-        {name}
+        <span style={{fontSize:textFontSize}} className={styles.fonts}>{name}</span>
       </div>
       {spouse && (
         <Xarrow
@@ -60,13 +62,15 @@ const Oneline = ({
                 arrowHeadSize={arrowHeadSize}
                 getNewPosition={getNewPosition}
                 spouseLineColor={spouseLineColor}
+                childsLineColor={childsLineColor}
+                textFontSize={textFontSize}
                 {...item}
               />
               <Xarrow
                 start={item.parentId}
                 end={item.id}
                 headSize={arrowHeadSize ? arrowHeadSize : 2}
-                color="#ccc"
+                color={childsLineColor ? childsLineColor : "#ccc"}
               />
             </div>
           ))

@@ -8,6 +8,9 @@
   height: 80px;
   cursor: pointer;
 }
+.fonts {
+  font-size: 14px;
+}
 .male {
   background-color: #a4ecff;
 }

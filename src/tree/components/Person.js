@@ -9,6 +9,8 @@ const Person = ({
   HEIGHT,
   arrowHeadSize,
   spouseLineColor,
+  childsLineColor,
+  textFontSize
 }) => {
   // console.log(spouseLineColor)
   return (
@@ -23,7 +25,8 @@ const Person = ({
                   WIDTH={WIDTH}
                   HEIGHT={HEIGHT}
                   spouseLineColor={spouseLineColor}
-                  
+                  childsLineColor={childsLineColor}
+                  textFontSize={textFontSize}
                   {...el}
                 />
                 <Xarrow
@@ -42,6 +45,8 @@ const Person = ({
             WIDTH={WIDTH}
             HEIGHT={HEIGHT}
             spouseLineColor={spouseLineColor}
+            childsLineColor={childsLineColor}
+            textFontSize={textFontSize}
             {...el}
           />
         </div>
