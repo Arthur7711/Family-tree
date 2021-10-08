@@ -1,7 +1,6 @@
 import styles from "./OneLine.module.css";
 import classNames from "classnames";
 import Xarrow from "react-xarrows";
-import { useState } from "react";
 
 const Oneline = ({
   id,
@@ -20,13 +19,9 @@ const Oneline = ({
   distanceByX,
   distanceByY,
 }) => {
-  const [y, setY] = useState(distanceByY ? distanceByY : 100);
-  const [x, setX] = useState(distanceByX ? distanceByX : 100);
+  let y = distanceByY ? distanceByY : 100;
+  let x = distanceByX ? distanceByX : 100;
   const hasChildren = children && children.length;
-
-  function getNewPosition() {
-    distanceByX ? setY(y + distanceByX) : setY(y + 100);
-  }
 
   return (
     <div style={{ position: "relative" }}>
@@ -65,7 +60,7 @@ const Oneline = ({
                 WIDTH={WIDTH}
                 HEIGHT={HEIGHT}
                 arrowHeadSize={arrowHeadSize}
-                getNewPosition={getNewPosition}
+                // getNewPosition={getNewPosition}
                 spouseLineColor={spouseLineColor}
                 childsLineColor={childsLineColor}
                 textFontSize={textFontSize}
