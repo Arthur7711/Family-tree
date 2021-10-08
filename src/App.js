@@ -1,4 +1,3 @@
-// import Lines from "./tree/components/linesTest/Lines";
 import Tree from "./tree/Tree";
 
 function App() {
@@ -19,11 +18,9 @@ function App() {
     { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "n11",childs:[] },
     { id: "n15", name: "name15", gender: "female", parentId: 'n11', spouse: "",childs:[] },
   ];
-  // give line distanc for x and y
   return (
     <div>
-      <Tree distanceByX={75} distanceByY={50} textFontSize='12px' childsLineColor="green" spouseLineColor='red' arrowHeadSize={3} WIDTH='40px' HEIGHT="50px" inputData={input} />
-      {/* <Lines /> */}
+      <Tree distanceByX={75} distanceByY={50} textFontSize='12px' childsLineColor="#ccc" spouseLineColor='blue ' arrowHeadSize={3} WIDTH='40px' HEIGHT="50px" inputData={input} />
     </div>
   );
 }

@@ -60,7 +60,6 @@ const Oneline = ({
                 WIDTH={WIDTH}
                 HEIGHT={HEIGHT}
                 arrowHeadSize={arrowHeadSize}
-                // getNewPosition={getNewPosition}
                 spouseLineColor={spouseLineColor}
                 childsLineColor={childsLineColor}
                 textFontSize={textFontSize}

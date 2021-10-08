@@ -14,7 +14,6 @@ const Person = ({
   distanceByX,
   distanceByY,
 }) => {
-  // console.log(spouseLineColor)
   return (
     <div className={styles.allPersons}>
       {personsData.map((el) => (
@@ -36,8 +35,6 @@ const Person = ({
                 <Xarrow
                   color={spouseLineColor ? spouseLineColor : "blue"}
                   headSize={arrowHeadSize ? arrowHeadSize : 2}
-                  // color="#ccc"
-                  // headSize={2}
                   start={s.spouse} //can be react ref
                   end={el.id} //or an id
                 />
