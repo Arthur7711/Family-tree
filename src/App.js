@@ -17,6 +17,8 @@ function App() {
     { id: "n13", name: "name13", gender: "male", parentId: "n2", spouse: "",spouceForChild:'' },
     { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "",spouceForChild:'n10' },
     { id: "n15", name: "name15", gender: "female", parentId: 'n11', spouse: "",spouceForChild:'' },
+    { id: "n16", name: "name16", gender: "female", parentId: null, spouse: "n6",spouceForChild:'n6' },
+    { id: "n17", name: "name17", gender: "female", parentId: null, spouse: "n12",spouceForChild:'n12' },
   ];
   return (
     <div>

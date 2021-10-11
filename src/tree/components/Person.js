@@ -15,6 +15,8 @@ const Person = ({
   distanceByY,
   childrensSpouces,
 }) => {
+  let result = 1;
+
   return (
     <div className={styles.allPersons}>
       {personsData.map((el) => (
@@ -53,6 +55,7 @@ const Person = ({
             distanceByX={distanceByX}
             distanceByY={distanceByY}
             childrensSpouces={childrensSpouces}
+            result={result}
             {...el}
           />
         </div>
@@ -61,7 +64,15 @@ const Person = ({
         childrensSpouces.map((el) => (
           <div
             key={el.id}
-            style={{ position: "absolute", top: "300px", left: "450px" }}
+            style={{
+              position: "absolute",
+              top:
+                localStorage.getItem(el.spouceForChild) * distanceByY +
+                distanceByY / 2 +
+                8,
+              left:
+                (150 + distanceByX) * localStorage.getItem(el.spouceForChild),
+            }}
           >
             <Oneline
               arrowHeadSize={arrowHeadSize}
@@ -70,8 +81,6 @@ const Person = ({
               spouseLineColor={spouseLineColor}
               childsLineColor={childsLineColor}
               textFontSize={textFontSize}
-              // distanceByX={distanceByX}
-              // distanceByY={distanceByY}
               childrensSpouces={childrensSpouces}
               {...el}
             />

@@ -18,11 +18,11 @@ const Oneline = ({
   textFontSize,
   distanceByX,
   distanceByY,
+  result,
 }) => {
   let y = distanceByY ? distanceByY : 100;
   let x = distanceByX ? distanceByX : 100;
   const hasChildren = children && children.length;
-
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -45,7 +45,7 @@ const Oneline = ({
       )}
 
       {hasChildren
-        ? children.map((item, key) => (
+        ? children.map((item, ind) => (
             <div
               key={item.id}
               className="test1"
@@ -53,9 +53,11 @@ const Oneline = ({
                 padding: "30px",
                 position: "absolute",
                 top: y,
-                left: x * key * 1.5,
+                left: x * ind * 2,
               }}
             >
+              {localStorage.setItem(`${item.id}X`,x * ind * 2)}
+              {localStorage.setItem(item.id, result++)}
               <Oneline
                 WIDTH={WIDTH}
                 HEIGHT={HEIGHT}
@@ -66,6 +68,7 @@ const Oneline = ({
                 distanceByX={distanceByX}
                 distanceByY={distanceByY}
                 {...item}
+                result={result}
               />
               <Xarrow
                 start={item.parentId}

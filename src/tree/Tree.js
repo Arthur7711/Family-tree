@@ -34,11 +34,7 @@ const Tree = ({
   // }
   function makeTree(nodes, parentId, spouse) {
     return (data = nodes
-      .filter(
-        (node) =>
-          // (!parentId && spouse.length > 0 && node.spouse === spouse) ||
-          node.parentId === parentId && !node.spouceForChild
-      )
+      .filter((node) => node.parentId === parentId && !node.spouceForChild)
       .reduce(
         (tree, node) => [
           ...tree,
@@ -49,13 +45,15 @@ const Tree = ({
         ],
         []
       ));
-  } 
+  }
 
   makeTree(inputData, null, "");
-  console.log(data)
+  console.log(data);
 
-  const childrensSpouces=inputData.filter(childSpouce=>childSpouce.spouceForChild)
-  console.log(childrensSpouces)
+  const childrensSpouces = inputData.filter(
+    (childSpouce) => childSpouce.spouceForChild
+  );
+  console.log(childrensSpouces);
 
   return (
     <div className={styles.tree}>
