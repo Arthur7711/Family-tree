@@ -9,7 +9,7 @@ const Oneline = ({
   spouse,
   children,
   parentId,
-  childs,
+  spouceForChild,
   WIDTH,
   HEIGHT,
   arrowHeadSize,
@@ -29,7 +29,7 @@ const Oneline = ({
         style={{ width: WIDTH, height: HEIGHT }}
         id={id}
         className={classNames(styles.inner, styles[gender])}
-        title={`id_${id}, spouse_${spouse}, childrens_${childs}`}
+        title={`id_${id}, spouse_${spouse}, spouceForChild_${spouceForChild}`}
       >
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
           {name}
@@ -53,7 +53,7 @@ const Oneline = ({
                 padding: "30px",
                 position: "absolute",
                 top: y,
-                left: x * key,
+                left: x * key * 1.5,
               }}
             >
               <Oneline

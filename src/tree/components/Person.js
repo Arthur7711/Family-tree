@@ -13,6 +13,7 @@ const Person = ({
   textFontSize,
   distanceByX,
   distanceByY,
+  childrensSpouces,
 }) => {
   return (
     <div className={styles.allPersons}>
@@ -30,6 +31,7 @@ const Person = ({
                   textFontSize={textFontSize}
                   distanceByX={distanceByX}
                   distanceByY={distanceByY}
+                  childrensSpouces={childrensSpouces}
                   {...el}
                 />
                 <Xarrow
@@ -50,10 +52,31 @@ const Person = ({
             textFontSize={textFontSize}
             distanceByX={distanceByX}
             distanceByY={distanceByY}
+            childrensSpouces={childrensSpouces}
             {...el}
           />
         </div>
       ))}
+      {childrensSpouces &&
+        childrensSpouces.map((el) => (
+          <div
+            key={el.id}
+            style={{ position: "absolute", top: "300px", left: "450px" }}
+          >
+            <Oneline
+              arrowHeadSize={arrowHeadSize}
+              WIDTH={WIDTH}
+              HEIGHT={HEIGHT}
+              spouseLineColor={spouseLineColor}
+              childsLineColor={childsLineColor}
+              textFontSize={textFontSize}
+              // distanceByX={distanceByX}
+              // distanceByY={distanceByY}
+              childrensSpouces={childrensSpouces}
+              {...el}
+            />
+          </div>
+        ))}
     </div>
   );
 };

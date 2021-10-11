@@ -15,23 +15,47 @@ const Tree = ({
   distanceByY,
 }) => {
   let data;
-  function makeTree(nodes, parentId) {
+  // function makeTree(nodes, parentId, spouse) {
+  //   return (data = nodes
+  //     .filter(
+  //       (node) =>
+  //         node.parentId === parentId
+  //     )
+  //     .reduce(
+  //       (tree, node) => [
+  //         ...tree,
+  //         {
+  //           ...node,
+  //           children: makeTree(nodes, node.id, node.spouse),
+  //         },
+  //       ],
+  //       []
+  //     ));
+  // }
+  function makeTree(nodes, parentId, spouse) {
     return (data = nodes
-      .filter((node) => node.parentId === parentId)
+      .filter(
+        (node) =>
+          // (!parentId && spouse.length > 0 && node.spouse === spouse) ||
+          node.parentId === parentId && !node.spouceForChild
+      )
       .reduce(
         (tree, node) => [
           ...tree,
           {
             ...node,
-            children: makeTree(nodes, node.id),
+            children: makeTree(nodes, node.id, node.spouse),
           },
         ],
         []
       ));
-  }
+  } 
 
-  makeTree(inputData, null);
-  console.log(data);
+  makeTree(inputData, null, "");
+  console.log(data)
+
+  const childrensSpouces=inputData.filter(childSpouce=>childSpouce.spouceForChild)
+  console.log(childrensSpouces)
 
   return (
     <div className={styles.tree}>
@@ -45,6 +69,7 @@ const Tree = ({
         personsData={data}
         distanceByX={distanceByX}
         distanceByY={distanceByY}
+        childrensSpouces={childrensSpouces}
       />
     </div>
   );
