@@ -41,6 +41,7 @@ const Person = ({
                   headSize={arrowHeadSize ? arrowHeadSize : 2}
                   start={s.spouse} //can be react ref
                   end={el.id} //or an id
+                  path="grid"
                 />
               </div>
             ) : null;

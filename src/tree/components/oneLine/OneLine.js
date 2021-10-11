@@ -41,6 +41,7 @@ const Oneline = ({
           headSize={arrowHeadSize ? arrowHeadSize : 2}
           start={spouse} //can be react ref
           end={id} //or an id
+          path="grid"
         />
       )}
 
@@ -75,6 +76,7 @@ const Oneline = ({
                 end={item.id}
                 headSize={arrowHeadSize ? arrowHeadSize : 2}
                 color={childsLineColor ? childsLineColor : "#ccc"}
+                path="grid"
               />
             </div>
           ))
