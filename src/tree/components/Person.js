@@ -9,11 +9,11 @@ const Person = ({
   HEIGHT,
   arrowHeadSize,
   spouseLineColor,
-  childsLineColor,
+  childLineColor,
   textFontSize,
   distanceByX,
   distanceByY,
-  childrensSpouces,
+  childrenSpouses,
 }) => {
   let result = 1;
 
@@ -29,11 +29,11 @@ const Person = ({
                   WIDTH={WIDTH}
                   HEIGHT={HEIGHT}
                   spouseLineColor={spouseLineColor}
-                  childsLineColor={childsLineColor}
+                  childLineColor={childLineColor}
                   textFontSize={textFontSize}
                   distanceByX={distanceByX}
                   distanceByY={distanceByY}
-                  childrensSpouces={childrensSpouces}
+                  childrenSpouses={childrenSpouses}
                   {...el}
                 />
                 <Xarrow
@@ -51,18 +51,18 @@ const Person = ({
             WIDTH={WIDTH}
             HEIGHT={HEIGHT}
             spouseLineColor={spouseLineColor}
-            childsLineColor={childsLineColor}
+            childLineColor={childLineColor}
             textFontSize={textFontSize}
             distanceByX={distanceByX}
             distanceByY={distanceByY}
-            childrensSpouces={childrensSpouces}
+            childrenSpouses={childrenSpouses}
             result={result}
             {...el}
           />
         </div>
       ))}
-      {childrensSpouces &&
-        childrensSpouces.map((el) => (
+      {childrenSpouses &&
+        childrenSpouses.map((el) => (
           <div
             key={el.id}
             style={{
@@ -80,9 +80,9 @@ const Person = ({
               WIDTH={WIDTH}
               HEIGHT={HEIGHT}
               spouseLineColor={spouseLineColor}
-              childsLineColor={childsLineColor}
+              childLineColor={childLineColor}
               textFontSize={textFontSize}
-              childrensSpouces={childrensSpouces}
+              childrenSpouses={childrenSpouses}
               {...el}
             />
           </div>

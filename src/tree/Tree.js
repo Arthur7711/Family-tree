@@ -9,7 +9,7 @@ const Tree = ({
   HEIGHT,
   arrowHeadSize,
   spouseLineColor,
-  childsLineColor,
+  childLineColor,
   textFontSize,
   distanceByX,
   distanceByY,
@@ -34,7 +34,7 @@ const Tree = ({
   // }
   function makeTree(nodes, parentId, spouse) {
     return (data = nodes
-      .filter((node) => node.parentId === parentId && !node.spouceForChild)
+      .filter((node) => node.parentId === parentId && !node.spouseForChild)
       .reduce(
         (tree, node) => [
           ...tree,
@@ -50,10 +50,10 @@ const Tree = ({
   makeTree(inputData, null, "");
   console.log(data);
 
-  const childrensSpouces = inputData.filter(
-    (childSpouce) => childSpouce.spouceForChild
+  const childrenSpouses = inputData.filter(
+    (childSpouse) => childSpouse.spouseForChild
   );
-  console.log(childrensSpouces);
+  console.log(childrenSpouses);
 
   return (
     <div className={styles.tree}>
@@ -62,12 +62,12 @@ const Tree = ({
         WIDTH={WIDTH}
         HEIGHT={HEIGHT}
         arrowHeadSize={arrowHeadSize}
-        childsLineColor={childsLineColor}
+        childLineColor={childLineColor}
         textFontSize={textFontSize}
         personsData={data}
         distanceByX={distanceByX}
         distanceByY={distanceByY}
-        childrensSpouces={childrensSpouces}
+        childrenSpouses={childrenSpouses}
       />
     </div>
   );
@@ -79,7 +79,7 @@ Tree.propTypes = {
   HEIGHT: PropTypes.string,
   arrowHeadSize: PropTypes.number,
   spouseLineColor: PropTypes.string,
-  childsLineColor: PropTypes.string,
+  childLineColor: PropTypes.string,
   textFontSize: PropTypes.string,
   distanceByX: PropTypes.number,
   distanceByY: PropTypes.number,

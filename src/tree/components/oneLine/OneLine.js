@@ -9,12 +9,12 @@ const Oneline = ({
   spouse,
   children,
   parentId,
-  spouceForChild,
+  spouseForChild,
   WIDTH,
   HEIGHT,
   arrowHeadSize,
   spouseLineColor,
-  childsLineColor,
+  childLineColor,
   textFontSize,
   distanceByX,
   distanceByY,
@@ -29,7 +29,7 @@ const Oneline = ({
         style={{ width: WIDTH, height: HEIGHT }}
         id={id}
         className={classNames(styles.inner, styles[gender])}
-        title={`id_${id}, spouse_${spouse}, spouceForChild_${spouceForChild}`}
+        title={`id_${id}, spouse_${spouse}, spouseForChild_${spouseForChild}`}
       >
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
           {name}
@@ -64,7 +64,7 @@ const Oneline = ({
                 HEIGHT={HEIGHT}
                 arrowHeadSize={arrowHeadSize}
                 spouseLineColor={spouseLineColor}
-                childsLineColor={childsLineColor}
+                childLineColor={childLineColor}
                 textFontSize={textFontSize}
                 distanceByX={distanceByX}
                 distanceByY={distanceByY}
@@ -75,7 +75,7 @@ const Oneline = ({
                 start={item.parentId}
                 end={item.id}
                 headSize={arrowHeadSize ? arrowHeadSize : 2}
-                color={childsLineColor ? childsLineColor : "#ccc"}
+                color={childLineColor ? childLineColor : "#ccc"}
                 path="grid"
               />
             </div>
