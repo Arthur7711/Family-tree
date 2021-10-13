@@ -1,3 +1,4 @@
+import Trydrag from "./tree/components/tryDrag/TryDrag";
 import Tree from "./tree/Tree";
 
 function App() {
@@ -11,18 +12,19 @@ function App() {
     { id: "n7", name: "name7", gender: "female", parentId: "n5", spouse: "",spouseForChild:'' },
     { id: "n8", name: "name8", gender: "male", parentId: "n6", spouse: "",spouseForChild:'' },
     { id: "n9", name: "name9", gender: "male", parentId: "n8", spouse: "",spouseForChild:'' },
-    { id: "n10", name: "name10", gender: "female", parentId: "n8", spouse: "",spouseForChild:'' },
+    { id: "n10", name: "name10", gender: "female", parentId: "n8", spouse: "n14",spouseForChild:'' },
     { id: "n11", name: "name11", gender: "male", parentId: null, spouse: "",spouseForChild:'' },
     { id: "n12", name: "name12", gender: "male", parentId: "n2", spouse: "",spouseForChild:'' },
     { id: "n13", name: "name13", gender: "male", parentId: "n2", spouse: "",spouseForChild:'' },
-    // { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "",spouseForChild:'n10' },
+    { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "",spouseForChild:'n10' },
     { id: "n15", name: "name15", gender: "female", parentId: 'n11', spouse: "",spouseForChild:'' },
-    // { id: "n16", name: "name16", gender: "female", parentId: null, spouse: "n6",spouseForChild:'n6' },
-    // { id: "n17", name: "name17", gender: "female", parentId: null, spouse: "n12",spouseForChild:'n12' },
+    { id: "n16", name: "name16", gender: "female", parentId: null, spouse: "n6",spouseForChild:'n6' },
+    { id: "n17", name: "name17", gender: "female", parentId: null, spouse: "n12",spouseForChild:'n12' },
   ];
   return (
     <div>
-      <Tree distanceByX={75} distanceByY={50} textFontSize='12px' childLineColor="#ccc" spouseLineColor='green ' arrowHeadSize={2} WIDTH='40px' HEIGHT="50px" inputData={input} />
+      <Tree distanceByX={75} distanceByY={50} textFontSize='12px' childLineColor="#ccc" spouseLineColor='green ' arrowHeadSize={1} WIDTH='40px' HEIGHT="50px" inputData={input} />
+      {/* <Trydrag /> */}
     </div>
   );
 }

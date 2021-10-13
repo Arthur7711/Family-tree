@@ -54,11 +54,11 @@ const Oneline = ({
                 padding: "30px",
                 position: "absolute",
                 top: y,
-                left: x * ind * 2,
+                left: x * ind,
               }}
             >
-              {localStorage.setItem(`${item.id}X`,x * ind * 2)}
-              {localStorage.setItem(item.id, result++)}
+              {/* {localStorage.setItem(`${item.id}X`, result + x * ind)} */}
+              {/* {localStorage.setItem(item.id, result++)} */}
               <Oneline
                 WIDTH={WIDTH}
                 HEIGHT={HEIGHT}
