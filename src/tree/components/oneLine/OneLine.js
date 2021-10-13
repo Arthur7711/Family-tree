@@ -1,6 +1,7 @@
 import styles from "./OneLine.module.css";
 import classNames from "classnames";
 import Xarrow from "react-xarrows";
+import React from "react";
 
 const Oneline = ({
   id,
@@ -19,10 +20,12 @@ const Oneline = ({
   distanceByX,
   distanceByY,
   result,
+  findingelement,
 }) => {
   let y = distanceByY ? distanceByY : 100;
   let x = distanceByX ? distanceByX : 100;
   const hasChildren = children && children.length;
+
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -30,11 +33,15 @@ const Oneline = ({
         id={id}
         className={classNames(styles.inner, styles[gender])}
         title={`id_${id}, spouse_${spouse}, spouseForChild_${spouseForChild}`}
-      >
+        >
+          {setTimeout(() => {
+            findingelement = () => spouseLineColor;
+          }, 300)}
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
           {name}
         </span>
       </div>
+      {console.log(window.outerWidth)}
       {spouse && (
         <Xarrow
           color={spouseLineColor ? spouseLineColor : "blue"}
@@ -49,16 +56,17 @@ const Oneline = ({
         ? children.map((item, ind) => (
             <div
               key={item.id}
-              className="test1"
+              className="test4"
               style={{
                 padding: "30px",
                 position: "absolute",
                 top: y,
-                left: x * ind,
+                left: x * ind * 1.5,
               }}
             >
-              {/* {localStorage.setItem(`${item.id}X`, result + x * ind)} */}
-              {/* {localStorage.setItem(item.id, result++)} */}
+              {/* {localStorage.setItem(`${item.id}X`, x)}
+              {localStorage.setItem(`${item.id}Y`, y)} */}
+
               <Oneline
                 WIDTH={WIDTH}
                 HEIGHT={HEIGHT}
