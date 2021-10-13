@@ -1,7 +1,7 @@
 import React from "react";
 import Oneline from "./oneLine/OneLine";
 import styles from "./Person.module.css";
-import Xarrow, { useXarrow, Xwrapper } from "react-xarrows";
+import Xarrow, { useXarrow } from "react-xarrows";
 import Draggable from "react-draggable";
 
 const Person = ({
@@ -17,23 +17,8 @@ const Person = ({
   childrenSpouses,
 }) => {
   let result = 1;
-
-  const boxStyle = {
-    border: "grey solid 2px",
-    borderRadius: "10px",
-    padding: "5px",
-  };
-
   const updateXarrow = useXarrow();
-  // const DraggableBox = ({ id }) => {
-  //   return (
-  //     <Draggable onDrag={updateXarrow} onStop={updateXarrow}>
-  //       <div id={id} style={boxStyle}>
-  //         {id}
-  //       </div>
-  //     </Draggable>
-  //   );
-  // };
+
   return (
     <div className={styles.allPersons}>
       {personsData.map((el) => (
@@ -80,17 +65,8 @@ const Person = ({
       ))}
       {childrenSpouses &&
         childrenSpouses.map((el) => (
-          <Draggable onDrag={updateXarrow} onStop={updateXarrow}>
-            <div
-              key={el.id}
-              // style={{
-              //   position: "absolute",
-              //   top:
-              //     // (distanceByY / 2 + 8) * localStorage.getItem(el.spouseForChild),
-              //   left:
-              //     // (150 + distanceByX) * localStorage.getItem(el.spouseForChild),
-              // }}
-            >
+          <Draggable onDrag={updateXarrow} onStop={updateXarrow} key={el.id}>
+            <div>
               <Oneline
                 arrowHeadSize={arrowHeadSize}
                 WIDTH={WIDTH}

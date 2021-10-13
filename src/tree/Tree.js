@@ -15,23 +15,6 @@ const Tree = ({
   distanceByY,
 }) => {
   let data;
-  // function makeTree(nodes, parentId, spouse) {
-  //   return (data = nodes
-  //     .filter(
-  //       (node) =>
-  //         node.parentId === parentId
-  //     )
-  //     .reduce(
-  //       (tree, node) => [
-  //         ...tree,
-  //         {
-  //           ...node,
-  //           children: makeTree(nodes, node.id, node.spouse),
-  //         },
-  //       ],
-  //       []
-  //     ));
-  // }
   function makeTree(nodes, parentId, spouse) {
     return (data = nodes
       .filter((node) => node.parentId === parentId && !node.spouseForChild)

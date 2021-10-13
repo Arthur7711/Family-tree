@@ -1,4 +1,4 @@
-import Trydrag from "./tree/components/tryDrag/TryDrag";
+// import Trydrag from "./tree/components/tryDrag/TryDrag";
 import Tree from "./tree/Tree";
 
 function App() {
