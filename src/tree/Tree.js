@@ -31,12 +31,12 @@ const Tree = ({
   }
 
   makeTree(inputData, null, "");
-  console.log(data);
+  // console.log(data);
 
   const childrenSpouses = inputData.filter(
     (childSpouse) => childSpouse.spouseForChild
   );
-  console.log(childrenSpouses);
+  // console.log(childrenSpouses);
 
   return (
     <div className={styles.tree}>

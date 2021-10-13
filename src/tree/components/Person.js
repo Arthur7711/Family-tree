@@ -17,18 +17,14 @@ const Person = ({
 }) => {
   let result = 1;
 
-  function findingelement(findById) {
-    let obj;
-    setTimeout(() => {
-      let div1rect = document.getElementById(findById).getBoundingClientRect();
-      let div1x = div1rect.left + div1rect.width / 2;
-      let div1y = div1rect.top + div1rect.height / 2;
-      obj = { forLeftObj: div1x, forTopObj: div1y };
-      console.log(obj);
-      // return obj;
-    }, 300);
-    return obj;
-  }
+  // function findingelement(findById) {
+  //   // setTimeout(() => {
+  //     let div1rect = document.getElementById(findById).getBoundingClientRect();
+  //     let div1x = div1rect.left + div1rect.width / 2;
+  //     let div1y = div1rect.top + div1rect.height / 2;
+  //     console.log(div1x, div1y);
+  //   // }, 100);
+  // }
 
   return (
     <div className={styles.allPersons}>
@@ -77,9 +73,12 @@ const Person = ({
       {childrenSpouses &&
         childrenSpouses.map((el) => (
           <div key={el.id}>
-            {findingelement(() => el.spouseForChild)}
-            {/* {el.spouseForChild && setTimeout(() => {
-              findingelement(() => el.spouseForChild);
+            {/* {findingelement(() => el.id)} */}
+            {/* {setTimeout(() => {
+              let div1rect = document.getElementById(el.id).getBoundingClientRect();
+              let div1x = div1rect.left + div1rect.width / 2;
+              let div1y = div1rect.top + div1rect.height / 2;
+              console.log(div1x, div1y);
             }, 300)} */}
             <Oneline
               arrowHeadSize={arrowHeadSize}
@@ -89,7 +88,7 @@ const Person = ({
               childLineColor={childLineColor}
               textFontSize={textFontSize}
               childrenSpouses={childrenSpouses}
-              findingelement={findingelement}
+              // findingelement={findingelement}
               {...el}
             />
           </div>

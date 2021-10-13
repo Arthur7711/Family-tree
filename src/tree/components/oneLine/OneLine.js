@@ -20,12 +20,21 @@ const Oneline = ({
   distanceByX,
   distanceByY,
   result,
-  findingelement,
+  // findingelement,
 }) => {
   let y = distanceByY ? distanceByY : 100;
   let x = distanceByX ? distanceByX : 100;
   const hasChildren = children && children.length;
 
+  // function findingelement(findById) {
+  //   setTimeout(() => {
+  //     let div1rect = document.getElementById(findById).getBoundingClientRect();
+  //     let div1x = div1rect.left + div1rect.width / 2;
+  //     let div1y = div1rect.top + div1rect.height / 2;
+  //     console.log(div1x, div1y);
+  //     // return obj;
+  //   }, 300);
+  // }
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -33,15 +42,20 @@ const Oneline = ({
         id={id}
         className={classNames(styles.inner, styles[gender])}
         title={`id_${id}, spouse_${spouse}, spouseForChild_${spouseForChild}`}
-        >
-          {setTimeout(() => {
-            findingelement = () => spouseLineColor;
+      >
+        {spouse &&
+          parentId &&
+          setTimeout(() => {
+            let div1rect = document.getElementById(id).getBoundingClientRect();
+            let div1x = div1rect.left + div1rect.width / 2;
+            let div1y = div1rect.top + div1rect.height / 2;
+            console.log(id, div1x, div1y);
           }, 300)}
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
           {name}
         </span>
       </div>
-      {console.log(window.outerWidth)}
+      {/* {console.log(window.outerWidth)} */}
       {spouse && (
         <Xarrow
           color={spouseLineColor ? spouseLineColor : "blue"}
