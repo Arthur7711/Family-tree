@@ -30,7 +30,7 @@ const Oneline = ({
         style={{ width: WIDTH, height: HEIGHT }}
         id={id}
         className={classNames(styles.inner, styles[gender])}
-        title={`id_${id}, spouse_${spouse}, spouseForChild_${spouseForChild}`}
+        title={`${name}`}
       >
         {spouse &&
           parentId &&
@@ -42,7 +42,7 @@ const Oneline = ({
             localStorage.setItem(`${id}y`, div1y);
           }, 0)}
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
-          {name}
+          {id}
         </span>
       </div>
       {spouse && (
