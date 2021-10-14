@@ -15,6 +15,8 @@ const Person = ({
   distanceByY,
   childrenSpouses,
 }) => {
+  // window.location.reload()
+  
   return (
     <div className={styles.allPersons}>
       {personsData.map((el) => (
@@ -66,12 +68,12 @@ const Person = ({
               position: "absolute",
               left: distanceByX
                 ? localStorage.getItem(el.spouseForChild + "x") - distanceByX
-                : localStorage.getItem(el.spouseForChild + "x")-75,
+                : localStorage.getItem(el.spouseForChild + "x") - 75,
               top: distanceByY
                 ? localStorage.getItem(el.spouseForChild + "y") -
                   distanceByY / 2 -
                   2
-                : localStorage.getItem(el.spouseForChild + "y")-27,
+                : localStorage.getItem(el.spouseForChild + "y") - 27,
             }}
           >
             <Oneline

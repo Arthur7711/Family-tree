@@ -1,7 +1,7 @@
 import styles from "./OneLine.module.css";
 import classNames from "classnames";
 import Xarrow from "react-xarrows";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Oneline = ({
   id,
@@ -23,6 +23,19 @@ const Oneline = ({
   let y = distanceByY ? distanceByY : 50;
   let x = distanceByX ? distanceByX : 75;
   const hasChildren = children && children.length;
+
+  if (!localStorage.getItem("newCount")) {
+    localStorage.setItem("newCount", 0);
+  }
+  if (localStorage.getItem("newCount") < 2) {
+    setTimeout(() => {
+      localStorage.setItem(
+        "newCount",
+        Number(localStorage.getItem("newCount")) + 1
+      );
+      window.location.reload();
+    }, 200);
+  }
 
   return (
     <div style={{ position: "relative" }}>
