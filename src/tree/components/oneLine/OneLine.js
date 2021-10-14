@@ -1,7 +1,7 @@
 import styles from "./OneLine.module.css";
 import classNames from "classnames";
 import Xarrow from "react-xarrows";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Oneline = ({
   id,

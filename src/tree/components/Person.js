@@ -15,8 +15,6 @@ const Person = ({
   distanceByY,
   childrenSpouses,
 }) => {
-  // window.location.reload()
-  
   return (
     <div className={styles.allPersons}>
       {personsData.map((el) => (
