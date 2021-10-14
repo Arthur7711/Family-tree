@@ -19,22 +19,11 @@ const Oneline = ({
   textFontSize,
   distanceByX,
   distanceByY,
-  result,
-  // findingelement,
 }) => {
-  let y = distanceByY ? distanceByY : 100;
-  let x = distanceByX ? distanceByX : 100;
+  let y = distanceByY ? distanceByY : 50;
+  let x = distanceByX ? distanceByX : 75;
   const hasChildren = children && children.length;
 
-  // function findingelement(findById) {
-  //   setTimeout(() => {
-  //     let div1rect = document.getElementById(findById).getBoundingClientRect();
-  //     let div1x = div1rect.left + div1rect.width / 2;
-  //     let div1y = div1rect.top + div1rect.height / 2;
-  //     console.log(div1x, div1y);
-  //     // return obj;
-  //   }, 300);
-  // }
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -49,17 +38,17 @@ const Oneline = ({
             let div1rect = document.getElementById(id).getBoundingClientRect();
             let div1x = div1rect.left + div1rect.width / 2;
             let div1y = div1rect.top + div1rect.height / 2;
-            console.log(id, div1x, div1y);
-          }, 300)}
+            localStorage.setItem(`${id}x`, div1x);
+            localStorage.setItem(`${id}y`, div1y);
+          }, 0)}
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
           {name}
         </span>
       </div>
-      {/* {console.log(window.outerWidth)} */}
       {spouse && (
         <Xarrow
           color={spouseLineColor ? spouseLineColor : "blue"}
-          headSize={arrowHeadSize ? arrowHeadSize : 2}
+          headSize={arrowHeadSize ? arrowHeadSize : 1}
           start={spouse} //can be react ref
           end={id} //or an id
           path="grid"
@@ -78,9 +67,6 @@ const Oneline = ({
                 left: x * ind * 1.5,
               }}
             >
-              {/* {localStorage.setItem(`${item.id}X`, x)}
-              {localStorage.setItem(`${item.id}Y`, y)} */}
-
               <Oneline
                 WIDTH={WIDTH}
                 HEIGHT={HEIGHT}
@@ -91,7 +77,6 @@ const Oneline = ({
                 distanceByX={distanceByX}
                 distanceByY={distanceByY}
                 {...item}
-                result={result}
               />
               <Xarrow
                 start={item.parentId}

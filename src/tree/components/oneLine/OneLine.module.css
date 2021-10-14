@@ -7,6 +7,7 @@
   width: 70px;
   height: 80px;
   cursor: pointer;
+  font-size: 0;
 }
 .fonts {
   font-size: 14px;

@@ -18,12 +18,12 @@ function App() {
     { id: "n13", name: "name13", gender: "male", parentId: "n2", spouse: "",spouseForChild:'' },
     { id: "n14", name: "name14", gender: "female", parentId: null, spouse: "",spouseForChild:'n10' },
     { id: "n15", name: "name15", gender: "female", parentId: 'n11', spouse: "",spouseForChild:'' },
-    { id: "n16", name: "name16", gender: "female", parentId: null, spouse: "",spouseForChild:'n6' },
+    { id: "n16", name: "name16", gender: "female", parentId: null, spouse: "",spouseForChild:'n8' },
     { id: "n17", name: "name17", gender: "female", parentId: null, spouse: "",spouseForChild:'n12' },
   ];
   return (
     <div>
-      <Tree distanceByX={75} distanceByY={50} textFontSize='12px' childLineColor="#ccc" spouseLineColor='green ' arrowHeadSize={1} WIDTH='40px' HEIGHT="50px" inputData={input} />
+      <Tree distanceByX={75} distanceByY={50} textFontSize='12px' childLineColor="#ccc" spouseLineColor='#ccc ' arrowHeadSize={1} WIDTH='40px' HEIGHT="50px" inputData={input} />
       {/* <Trydrag /> */}
     </div>
   );

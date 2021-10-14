@@ -15,17 +15,6 @@ const Person = ({
   distanceByY,
   childrenSpouses,
 }) => {
-  let result = 1;
-
-  // function findingelement(findById) {
-  //   // setTimeout(() => {
-  //     let div1rect = document.getElementById(findById).getBoundingClientRect();
-  //     let div1x = div1rect.left + div1rect.width / 2;
-  //     let div1y = div1rect.top + div1rect.height / 2;
-  //     console.log(div1x, div1y);
-  //   // }, 100);
-  // }
-
   return (
     <div className={styles.allPersons}>
       {personsData.map((el) => (
@@ -65,21 +54,26 @@ const Person = ({
             distanceByX={distanceByX}
             distanceByY={distanceByY}
             childrenSpouses={childrenSpouses}
-            result={result}
             {...el}
           />
         </div>
       ))}
       {childrenSpouses &&
         childrenSpouses.map((el) => (
-          <div key={el.id}>
-            {/* {findingelement(() => el.id)} */}
-            {/* {setTimeout(() => {
-              let div1rect = document.getElementById(el.id).getBoundingClientRect();
-              let div1x = div1rect.left + div1rect.width / 2;
-              let div1y = div1rect.top + div1rect.height / 2;
-              console.log(div1x, div1y);
-            }, 300)} */}
+          <div
+            key={el.id}
+            style={{
+              position: "absolute",
+              left: distanceByX
+                ? localStorage.getItem(el.spouseForChild + "x") - distanceByX
+                : localStorage.getItem(el.spouseForChild + "x")-75,
+              top: distanceByY
+                ? localStorage.getItem(el.spouseForChild + "y") -
+                  distanceByY / 2 -
+                  2
+                : localStorage.getItem(el.spouseForChild + "y")-27,
+            }}
+          >
             <Oneline
               arrowHeadSize={arrowHeadSize}
               WIDTH={WIDTH}
@@ -88,7 +82,6 @@ const Person = ({
               childLineColor={childLineColor}
               textFontSize={textFontSize}
               childrenSpouses={childrenSpouses}
-              // findingelement={findingelement}
               {...el}
             />
           </div>
