@@ -14,6 +14,7 @@ const Person = ({
   distanceByX,
   distanceByY,
   childrenSpouses,
+  lineType,
 }) => {
   return (
     <div className={styles.allPersons}>
@@ -32,6 +33,7 @@ const Person = ({
                   distanceByX={distanceByX}
                   distanceByY={distanceByY}
                   childrenSpouses={childrenSpouses}
+                  lineType={lineType}
                   {...el}
                 />
                 <Xarrow
@@ -39,7 +41,7 @@ const Person = ({
                   headSize={arrowHeadSize ? arrowHeadSize : 2}
                   start={s.spouse} //can be react ref
                   end={el.id} //or an id
-                  path="grid"
+                  path={lineType ? lineType : "grid"}
                 />
               </div>
             ) : null;
@@ -54,6 +56,7 @@ const Person = ({
             distanceByX={distanceByX}
             distanceByY={distanceByY}
             childrenSpouses={childrenSpouses}
+            lineType={lineType}
             {...el}
           />
         </div>
@@ -82,6 +85,7 @@ const Person = ({
               childLineColor={childLineColor}
               textFontSize={textFontSize}
               childrenSpouses={childrenSpouses}
+              lineType={lineType}
               {...el}
             />
           </div>

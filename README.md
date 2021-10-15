@@ -18,6 +18,8 @@
 
 ### for giving height to each person element--> HEIGHT={string/'12px','2em','2rem'}
 
+### lineType can be smooth, grid , straight
+
 ### data should be like --> inputData={[data]}
 
     { id: "n1", name: "name1", gender: "male", parentId: null, spouse: "n2",childs:['n3','n4'] },

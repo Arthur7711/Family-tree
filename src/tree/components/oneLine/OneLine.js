@@ -19,6 +19,7 @@ const Oneline = ({
   textFontSize,
   distanceByX,
   distanceByY,
+  lineType,
 }) => {
   let y = distanceByY ? distanceByY : 50;
   let x = distanceByX ? distanceByX : 75;
@@ -27,6 +28,7 @@ const Oneline = ({
   if (!localStorage.getItem("newCount")) {
     localStorage.setItem("newCount", 0);
   }
+
   if (localStorage.getItem("newCount") < 2) {
     setTimeout(() => {
       localStorage.setItem(
@@ -64,7 +66,7 @@ const Oneline = ({
           headSize={arrowHeadSize ? arrowHeadSize : 1}
           start={spouse} //can be react ref
           end={id} //or an id
-          path="grid"
+          path={lineType ? lineType : "grid"}
         />
       )}
 
@@ -89,6 +91,7 @@ const Oneline = ({
                 textFontSize={textFontSize}
                 distanceByX={distanceByX}
                 distanceByY={distanceByY}
+                lineType={lineType}
                 {...item}
               />
               <Xarrow
@@ -96,7 +99,7 @@ const Oneline = ({
                 end={item.id}
                 headSize={arrowHeadSize ? arrowHeadSize : 2}
                 color={childLineColor ? childLineColor : "#ccc"}
-                path="grid"
+                path={lineType ? lineType : "grid"}
               />
             </div>
           ))

@@ -22,8 +22,9 @@ function App() {
     { id: "n17", name: "name17", gender: "female", parentId: null, spouse: "",spouseForChild:'n12' },
   ];
   return (
+    // lineType can be smooth, grid , straight
     <div>
-      <Tree distanceByX={75} distanceByY={50} textFontSize='12px' childLineColor="#ccc" spouseLineColor='#ccc ' arrowHeadSize={1} WIDTH='40px' HEIGHT="50px" inputData={input} />
+      <Tree lineType='grid' distanceByX={75} distanceByY={50} textFontSize='12px' childLineColor="#ccc" spouseLineColor='#ccc ' arrowHeadSize={1} WIDTH='40px' HEIGHT="50px" inputData={input} />
     </div>
   );
 }
