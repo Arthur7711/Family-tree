@@ -27,6 +27,8 @@ const Tree = ({
   distanceByX,
   distanceByY,
   lineType,
+  changingState,
+  input,
 }) => {
   let data;
   function makeTree(nodes, parentId, spouse) {
@@ -66,6 +68,8 @@ const Tree = ({
         distanceByY={distanceByY}
         childrenSpouses={childrenSpouses}
         lineType={lineType}
+        changingState={changingState}
+        input={input}
       />
     </div>
   );
@@ -82,5 +86,6 @@ Tree.propTypes = {
   distanceByX: PropTypes.number,
   distanceByY: PropTypes.number,
   lineType: PropTypes.string,
+  input:PropTypes.array
 };
 export default Tree;

@@ -15,9 +15,12 @@ const Person = ({
   distanceByY,
   childrenSpouses,
   lineType,
+  changingState,
+  input,
 }) => {
   return (
     <div className={styles.allPersons}>
+      <p className={styles.back} onClick={() => input && changingState(input)}>go to first position</p>
       {personsData.map((el) => (
         <div key={el.id}>
           {personsData.forEach((s) => {
@@ -34,6 +37,7 @@ const Person = ({
                   distanceByY={distanceByY}
                   childrenSpouses={childrenSpouses}
                   lineType={lineType}
+                  changingState={changingState}
                   {...el}
                 />
                 <Xarrow
@@ -57,6 +61,7 @@ const Person = ({
             distanceByY={distanceByY}
             childrenSpouses={childrenSpouses}
             lineType={lineType}
+            changingState={changingState}
             {...el}
           />
         </div>
@@ -86,6 +91,7 @@ const Person = ({
               textFontSize={textFontSize}
               childrenSpouses={childrenSpouses}
               lineType={lineType}
+              changingState={changingState}
               {...el}
             />
           </div>

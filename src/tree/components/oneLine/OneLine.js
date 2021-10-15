@@ -20,6 +20,8 @@ const Oneline = ({
   distanceByX,
   distanceByY,
   lineType,
+  changingState,
+  secondLine
 }) => {
   let y = distanceByY ? distanceByY : 50;
   let x = distanceByX ? distanceByX : 75;
@@ -46,6 +48,7 @@ const Oneline = ({
         id={id}
         className={classNames(styles.inner, styles[gender])}
         title={`${name}`}
+        onClick={()=>secondLine && changingState(secondLine)}
       >
         {spouse &&
           parentId &&
@@ -92,6 +95,7 @@ const Oneline = ({
                 distanceByX={distanceByX}
                 distanceByY={distanceByY}
                 lineType={lineType}
+                changingState={changingState}
                 {...item}
               />
               <Xarrow

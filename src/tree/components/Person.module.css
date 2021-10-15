@@ -5,3 +5,7 @@
   align-items: center;
   position: relative;
 }
+.back{
+  cursor: pointer;
+  color: blue;
+}
