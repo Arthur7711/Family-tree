@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import Person from "./components/Person";
 import styles from "./Tree.module.css";
 import { PropTypes } from "prop-types";
+
+function useWindowSize() {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return size;
+}
 
 const Tree = ({
   inputData,
@@ -13,7 +26,7 @@ const Tree = ({
   textFontSize,
   distanceByX,
   distanceByY,
-  lineType
+  lineType,
 }) => {
   let data;
   function makeTree(nodes, parentId, spouse) {
@@ -36,6 +49,8 @@ const Tree = ({
   const childrenSpouses = inputData.filter(
     (childSpouse) => childSpouse.spouseForChild
   );
+
+  useWindowSize();
 
   return (
     <div className={styles.tree}>
@@ -66,6 +81,6 @@ Tree.propTypes = {
   textFontSize: PropTypes.string,
   distanceByX: PropTypes.number,
   distanceByY: PropTypes.number,
-  lineType:PropTypes.string
+  lineType: PropTypes.string,
 };
 export default Tree;

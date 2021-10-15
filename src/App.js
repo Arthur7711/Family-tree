@@ -1,7 +1,6 @@
 import Tree from "./tree/Tree";
 
 function App() {
-  // window.location.reload()
   const input = [
     { id: "n1", name: "name1", gender: "male", parentId: null, spouse: "",spouseForChild:'' },
     { id: "n2", name: "name2", gender: "female", parentId: null, spouse: "n1",spouseForChild:'' },
