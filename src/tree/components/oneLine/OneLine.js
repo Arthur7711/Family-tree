@@ -21,6 +21,7 @@ const Oneline = ({
   lineType,
   changingState,
   secondLine,
+  otherSpouses,
 }) => {
   let y = distanceByY ? distanceByY : 50;
   let x = distanceByX ? distanceByX : 75;
@@ -74,15 +75,13 @@ const Oneline = ({
             }
           />
         ) : null}
-        {spouse &&
-          parentId &&
-          setTimeout(() => {
-            let div1rect = document.getElementById(id).getBoundingClientRect();
-            let div1x = div1rect.left + div1rect.width / 2;
-            let div1y = div1rect.top + div1rect.height / 2;
-            localStorage.setItem(`${id}x`, div1x);
-            localStorage.setItem(`${id}y`, div1y);
-          }, 0)}
+        {setTimeout(() => {
+          let div1rect = document.getElementById(id).getBoundingClientRect();
+          let div1x = div1rect.left + div1rect.width / 2;
+          let div1y = div1rect.top + div1rect.height / 2;
+          localStorage.setItem(`${id}x`, div1x);
+          localStorage.setItem(`${id}y`, div1y);
+        }, 0)}
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
           {id}
         </span>
@@ -120,6 +119,7 @@ const Oneline = ({
                 distanceByY={distanceByY}
                 lineType={lineType}
                 changingState={changingState}
+                otherSpouses={otherSpouses}
                 {...item}
               />
               <Xarrow

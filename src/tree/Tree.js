@@ -31,9 +31,14 @@ const Tree = ({
   input,
 }) => {
   let data;
-  function makeTree(nodes, parentId, spouse) {
+  function makeTree(nodes, parentId) {
     return (data = nodes
-      .filter((node) => node.parentId === parentId && !node.spouseForChild)
+      .filter(
+        (node) =>
+          node.parentId === parentId &&
+          !node.spouseForChild &&
+          !node.otherSpouse
+      )
       .reduce(
         (tree, node) => [
           ...tree,
@@ -47,10 +52,13 @@ const Tree = ({
   }
 
   makeTree(inputData, null, "");
-
   const childrenSpouses = inputData.filter(
     (childSpouse) => childSpouse.spouseForChild
   );
+
+  const otherSpouses = inputData.filter((other) => other.otherSpouse);
+
+  console.log(otherSpouses);
 
   useWindowSize();
 
@@ -70,6 +78,7 @@ const Tree = ({
         lineType={lineType}
         changingState={changingState}
         input={input}
+        otherSpouses={otherSpouses}
       />
     </div>
   );
@@ -86,6 +95,6 @@ Tree.propTypes = {
   distanceByX: PropTypes.number,
   distanceByY: PropTypes.number,
   lineType: PropTypes.string,
-  input:PropTypes.array
+  input: PropTypes.array,
 };
 export default Tree;

@@ -17,10 +17,13 @@ const Person = ({
   lineType,
   changingState,
   input,
+  otherSpouses,
 }) => {
   return (
     <div className={styles.allPersons}>
-      <p className={styles.back} onClick={() => input && changingState(input)}>go to first position</p>
+      <p className={styles.back} onClick={() => input && changingState(input)}>
+        go to first position
+      </p>
       {personsData.map((el) => (
         <div key={el.id}>
           {personsData.forEach((s) => {
@@ -38,6 +41,7 @@ const Person = ({
                   childrenSpouses={childrenSpouses}
                   lineType={lineType}
                   changingState={changingState}
+                  otherSpouses={otherSpouses}
                   {...el}
                 />
                 <Xarrow
@@ -62,10 +66,12 @@ const Person = ({
             childrenSpouses={childrenSpouses}
             lineType={lineType}
             changingState={changingState}
+            otherSpouses={otherSpouses}
             {...el}
           />
         </div>
       ))}
+
       {childrenSpouses &&
         childrenSpouses.map((el) => (
           <div
@@ -92,7 +98,47 @@ const Person = ({
               childrenSpouses={childrenSpouses}
               lineType={lineType}
               changingState={changingState}
+              otherSpouses={otherSpouses}
               {...el}
+            />
+          </div>
+        ))}
+      {otherSpouses &&
+        otherSpouses.map((el) => (
+          <div
+            key={el.id}
+            style={{
+              position: "absolute",
+              left: distanceByX
+                ? (localStorage.getItem(el.otherSpouse + "x") - distanceByX) * 1.15
+                : localStorage.getItem(el.otherSpouse + "x") + 75,
+              top: distanceByY
+                ? localStorage.getItem(el.otherSpouse + "y") -
+                  distanceByY / 2 -
+                  2
+                : localStorage.getItem(el.otherSpouse + "y") - 27,
+            }}
+          >
+            {/* {console.log(localStorage.getItem(el.otherSpouses + "y"))} */}
+            <Oneline
+              arrowHeadSize={arrowHeadSize}
+              WIDTH={WIDTH}
+              HEIGHT={HEIGHT}
+              spouseLineColor={spouseLineColor}
+              childLineColor={childLineColor}
+              textFontSize={textFontSize}
+              childrenSpouses={childrenSpouses}
+              lineType={lineType}
+              changingState={changingState}
+              otherSpouses={otherSpouses}
+              {...el}
+            />
+            <Xarrow
+              color={spouseLineColor ? spouseLineColor : "blue"}
+              headSize={arrowHeadSize ? arrowHeadSize : 2}
+              start={el.otherSpouse} //can be react ref
+              end={el.id} //or an id
+              path={lineType ? lineType : "grid"}
             />
           </div>
         ))}
