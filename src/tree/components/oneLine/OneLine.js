@@ -21,7 +21,7 @@ const Oneline = ({
   distanceByY,
   lineType,
   changingState,
-  secondLine
+  secondLine,
 }) => {
   let y = distanceByY ? distanceByY : 50;
   let x = distanceByX ? distanceByX : 75;
@@ -48,8 +48,34 @@ const Oneline = ({
         id={id}
         className={classNames(styles.inner, styles[gender])}
         title={`${name}`}
-        onClick={()=>secondLine && changingState(secondLine)}
+        onClick={() => secondLine && changingState(secondLine)}
       >
+        {secondLine ? (
+          <div
+            // className={classNames(styles[gender])}
+            style={
+              gender === "male"
+                ? {
+                    width: "20px",
+                    height: "10px",
+                    position: "absolute",
+                    top: -5,
+                    right: 5,
+                    borderRadius: "5px 0",
+                    backgroundColor: "#fdaed8",
+                  }
+                : {
+                    width: "20px",
+                    height: "10px",
+                    position: "absolute",
+                    top: -5,
+                    right: 5,
+                    borderRadius: "5px 0",
+                    backgroundColor: "#a4ecff",
+                  }
+            }
+          />
+        ) : null}
         {spouse &&
           parentId &&
           setTimeout(() => {
