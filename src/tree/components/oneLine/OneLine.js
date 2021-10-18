@@ -94,6 +94,7 @@ const Oneline = ({
           start={spouse} //can be react ref
           end={id} //or an id
           path={lineType ? lineType : "grid"}
+          zIndex={-5}
         />
       )}
 
@@ -107,7 +108,6 @@ const Oneline = ({
                 position: "absolute",
                 top: y,
                 left: x * ind * 1.5,
-                zIndex: 1000,
               }}
             >
               <Oneline
@@ -131,6 +131,7 @@ const Oneline = ({
                 headSize={arrowHeadSize ? arrowHeadSize : 2}
                 color={childLineColor ? childLineColor : "#ccc"}
                 path={lineType ? lineType : "grid"}
+                zIndex={-5}
               />
             </div>
           ))

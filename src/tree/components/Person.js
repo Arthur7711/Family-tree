@@ -52,6 +52,7 @@ const Person = ({
                   start={s.spouse} //can be react ref
                   end={el.id} //or an id
                   path={lineType ? lineType : "grid"}
+                  zIndex={-5}
                 />
               </div>
             ) : null;
@@ -144,7 +145,8 @@ const Person = ({
               headSize={arrowHeadSize ? arrowHeadSize : 2}
               start={el.otherSpouse} //can be react ref
               end={el.id} //or an id
-              path={lineType ? lineType : "grid"}
+              // path={lineType ? lineType : "grid"}
+              zIndex={-5}
             />
           </div>
         ))}
