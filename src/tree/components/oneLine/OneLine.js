@@ -10,7 +10,6 @@ const Oneline = ({
   spouse,
   children,
   parentId,
-  spouseForChild,
   WIDTH,
   HEIGHT,
   arrowHeadSize,
@@ -52,7 +51,6 @@ const Oneline = ({
       >
         {secondLine ? (
           <div
-            // className={classNames(styles[gender])}
             style={
               gender === "male"
                 ? {
