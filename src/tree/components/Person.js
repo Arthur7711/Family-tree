@@ -18,6 +18,7 @@ const Person = ({
   changingState,
   input,
   otherSpouses,
+  otherSpouseNum,
 }) => {
   return (
     <div className={styles.allPersons}>
@@ -42,6 +43,7 @@ const Person = ({
                   lineType={lineType}
                   changingState={changingState}
                   otherSpouses={otherSpouses}
+                  otherSpouseNum={otherSpouseNum}
                   {...el}
                 />
                 <Xarrow
@@ -67,6 +69,7 @@ const Person = ({
             lineType={lineType}
             changingState={changingState}
             otherSpouses={otherSpouses}
+            otherSpouseNum={otherSpouseNum}
             {...el}
           />
         </div>
@@ -99,6 +102,7 @@ const Person = ({
               lineType={lineType}
               changingState={changingState}
               otherSpouses={otherSpouses}
+              otherSpouseNum={otherSpouseNum}
               {...el}
             />
           </div>
@@ -110,7 +114,9 @@ const Person = ({
             style={{
               position: "absolute",
               left: distanceByX
-                ? (localStorage.getItem(el.otherSpouse + "x") - distanceByX) * 1.15
+                ? (localStorage.getItem(el.otherSpouse + "x") - distanceByX) *
+                  1.1 *
+                  `1.${el.otherSpouseNum}`
                 : localStorage.getItem(el.otherSpouse + "x") + 75,
               top: distanceByY
                 ? localStorage.getItem(el.otherSpouse + "y") -
@@ -119,7 +125,6 @@ const Person = ({
                 : localStorage.getItem(el.otherSpouse + "y") - 27,
             }}
           >
-            {/* {console.log(localStorage.getItem(el.otherSpouses + "y"))} */}
             <Oneline
               arrowHeadSize={arrowHeadSize}
               WIDTH={WIDTH}
@@ -131,6 +136,7 @@ const Person = ({
               lineType={lineType}
               changingState={changingState}
               otherSpouses={otherSpouses}
+              otherSpouseNum={otherSpouseNum}
               {...el}
             />
             <Xarrow

@@ -22,6 +22,7 @@ const Oneline = ({
   changingState,
   secondLine,
   otherSpouses,
+  otherSpouseNum,
 }) => {
   let y = distanceByY ? distanceByY : 50;
   let x = distanceByX ? distanceByX : 75;
@@ -106,6 +107,7 @@ const Oneline = ({
                 position: "absolute",
                 top: y,
                 left: x * ind * 1.5,
+                zIndex: 1000,
               }}
             >
               <Oneline
@@ -120,6 +122,7 @@ const Oneline = ({
                 lineType={lineType}
                 changingState={changingState}
                 otherSpouses={otherSpouses}
+                otherSpouseNum={otherSpouseNum}
                 {...item}
               />
               <Xarrow
