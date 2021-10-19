@@ -58,8 +58,6 @@ const Tree = ({
 
   const otherSpouses = inputData.filter((other) => other.otherSpouse);
 
-  console.log(otherSpouses);
-
   useWindowSize();
 
   return (
