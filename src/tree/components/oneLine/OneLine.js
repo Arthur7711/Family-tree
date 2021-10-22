@@ -23,10 +23,32 @@ const Oneline = ({
   secondLine,
   otherSpouses,
   otherSpouseNum,
+  secondParent,
 }) => {
-  let y = distanceByY ? distanceByY : 50;
+  // let y = distanceByY ? distanceByY : 50;
   let x = distanceByX ? distanceByX : 75;
   const hasChildren = children && children.length;
+
+  //   let obj = {};
+  //  ( function (){
+  //     if (!secondParent && parentId) {
+  //       obj = {
+  //         position: "absolute",
+  //         margin: "25px 25px 0 30px ",
+  //       };
+  //     } else if (secondParent && parentId) {
+  //       obj = {
+  //         position: "absolute",
+  //         margin: "25px 0px 0 0px ",
+  //       };
+  //     } else {
+  //       obj = {
+  //         position: "absolute",
+  //         margin: "0",
+  //       };
+  //     }
+  //     return obj
+  //   }())
 
   if (!localStorage.getItem("newCount")) {
     localStorage.setItem("newCount", 0);
@@ -43,7 +65,7 @@ const Oneline = ({
   }
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", margin: "25px 25px 0 0" }}>
       <div
         style={{ width: WIDTH, height: HEIGHT }}
         id={id}
@@ -103,12 +125,19 @@ const Oneline = ({
             <div
               key={item.id}
               className="test4"
-              style={{
-                padding: "30px",
-                position: "absolute",
-                top: y,
-                left: x * ind * 1.5,
-              }}
+              style={
+                !secondParent && !parentId
+                  ? {
+                      position: "absolute",
+                      margin: "25px 25px 0 30px ",
+                      left: x * ind * 1.5,
+                    }
+                  : {
+                      position: "absolute",
+                      margin: "25px 0px 0 0px ",
+                      left: x * ind * 1.5,
+                    }
+              }
             >
               <Oneline
                 WIDTH={WIDTH}
@@ -123,10 +152,20 @@ const Oneline = ({
                 changingState={changingState}
                 otherSpouses={otherSpouses}
                 otherSpouseNum={otherSpouseNum}
+                secondParent={secondParent}
                 {...item}
               />
               <Xarrow
                 start={item.parentId}
+                end={item.id}
+                headSize={arrowHeadSize ? arrowHeadSize : 2}
+                color={childLineColor ? childLineColor : "#ccc"}
+                path={lineType ? lineType : "grid"}
+                zIndex={-5}
+              />
+
+              <Xarrow
+                start={item.secondParent}
                 end={item.id}
                 headSize={arrowHeadSize ? arrowHeadSize : 2}
                 color={childLineColor ? childLineColor : "#ccc"}

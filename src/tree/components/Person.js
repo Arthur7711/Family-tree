@@ -22,14 +22,25 @@ const Person = ({
 }) => {
   return (
     <div className={styles.allPersons}>
-      <p className={styles.back} onClick={() => input && changingState(input)}>
-        go to first position
-      </p>
       {personsData.map((el) => (
         <div key={el.id}>
           {personsData.forEach((s) => {
             return el.spouse ? (
-              <div key={el.id}>
+              <div
+                key={el.id}
+                style={{
+                  position: "absolute",
+                  left: distanceByX
+                    ? localStorage.getItem(el.spouseForChild + "x") -
+                      distanceByX
+                    : localStorage.getItem(el.spouseForChild + "x") - 75,
+                  top: distanceByY
+                    ? localStorage.getItem(el.spouseForChild + "y") -
+                      distanceByY -
+                      2
+                    : localStorage.getItem(el.spouseForChild + "y") - 0,
+                }}
+              >
                 <Oneline
                   arrowHeadSize={arrowHeadSize}
                   WIDTH={WIDTH}
@@ -87,9 +98,9 @@ const Person = ({
                 : localStorage.getItem(el.spouseForChild + "x") - 75,
               top: distanceByY
                 ? localStorage.getItem(el.spouseForChild + "y") -
-                  distanceByY / 2 -
+                  distanceByY -
                   2
-                : localStorage.getItem(el.spouseForChild + "y") - 27,
+                : localStorage.getItem(el.spouseForChild + "y") - 0,
             }}
           >
             <Oneline
@@ -121,9 +132,9 @@ const Person = ({
                 : localStorage.getItem(el.otherSpouse + "x") + 75,
               top: distanceByY
                 ? localStorage.getItem(el.otherSpouse + "y") -
-                  distanceByY / 2 -
+                  distanceByY  -
                   2
-                : localStorage.getItem(el.otherSpouse + "y") - 27,
+                : localStorage.getItem(el.otherSpouse + "y") - 0,
             }}
           >
             <Oneline
@@ -145,11 +156,13 @@ const Person = ({
               headSize={arrowHeadSize ? arrowHeadSize : 2}
               start={el.otherSpouse} //can be react ref
               end={el.id} //or an id
-              // path={lineType ? lineType : "grid"}
               zIndex={-5}
             />
           </div>
         ))}
+      <p className={styles.back} onClick={() => input && changingState(input)}>
+        go to first position
+      </p>
     </div>
   );
 };

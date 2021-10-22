@@ -1,11 +1,13 @@
 .allPersons {
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   position: relative;
 }
-.back{
+.back {
   cursor: pointer;
   color: blue;
+  position:absolute;
+  right: 50px;
 }
