@@ -29,27 +29,6 @@ const Oneline = ({
   let x = distanceByX ? distanceByX : 75;
   const hasChildren = children && children.length;
 
-  //   let obj = {};
-  //  ( function (){
-  //     if (!secondParent && parentId) {
-  //       obj = {
-  //         position: "absolute",
-  //         margin: "25px 25px 0 30px ",
-  //       };
-  //     } else if (secondParent && parentId) {
-  //       obj = {
-  //         position: "absolute",
-  //         margin: "25px 0px 0 0px ",
-  //       };
-  //     } else {
-  //       obj = {
-  //         position: "absolute",
-  //         margin: "0",
-  //       };
-  //     }
-  //     return obj
-  //   }())
-
   if (!localStorage.getItem("newCount")) {
     localStorage.setItem("newCount", 0);
   }

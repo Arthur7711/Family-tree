@@ -131,9 +131,7 @@ const Person = ({
                   `1.${el.otherSpouseNum}`
                 : localStorage.getItem(el.otherSpouse + "x") + 75,
               top: distanceByY
-                ? localStorage.getItem(el.otherSpouse + "y") -
-                  distanceByY  -
-                  2
+                ? localStorage.getItem(el.otherSpouse + "y") - distanceByY - 2
                 : localStorage.getItem(el.otherSpouse + "y") - 0,
             }}
           >
