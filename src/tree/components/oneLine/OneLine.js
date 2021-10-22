@@ -96,6 +96,7 @@ const Oneline = ({
           end={id} //or an id
           path={lineType ? lineType : "grid"}
           zIndex={-5}
+          strokeWidth={1}
         />
       )}
 
@@ -141,6 +142,7 @@ const Oneline = ({
                 color={childLineColor ? childLineColor : "#ccc"}
                 path={lineType ? lineType : "grid"}
                 zIndex={-5}
+                strokeWidth={1}
               />
 
               <Xarrow
@@ -150,6 +152,7 @@ const Oneline = ({
                 color={childLineColor ? childLineColor : "#ccc"}
                 path={lineType ? lineType : "grid"}
                 zIndex={-5}
+                strokeWidth={1}
               />
             </div>
           ))

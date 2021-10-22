@@ -64,6 +64,7 @@ const Person = ({
                   end={el.id} //or an id
                   path={lineType ? lineType : "grid"}
                   zIndex={-5}
+                  strokeWidth={1}
                 />
               </div>
             ) : null;
@@ -155,6 +156,7 @@ const Person = ({
               start={el.otherSpouse} //can be react ref
               end={el.id} //or an id
               zIndex={-5}
+              strokeWidth={1}
             />
           </div>
         ))}
