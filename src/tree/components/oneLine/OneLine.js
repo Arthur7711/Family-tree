@@ -106,7 +106,7 @@ const Oneline = ({
           localStorage.setItem(`${id}y`, div1y);
         }, 0)}
         <span style={{ fontSize: textFontSize }} className={styles.fonts}>
-          {id}
+          {name}
         </span>
       </div>
       {spouse && (
